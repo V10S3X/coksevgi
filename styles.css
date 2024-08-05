@@ -1,0 +1,204 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8e6e0; /* Daha romantik bir arka plan rengi */
+    background-image: url('guller.jpg'); /* Gül resmi arka plan olarak eklendi */
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: #800000; /* Romantik kırmızı renk */
+    position: relative; /* Parıltı efekti için */
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    font-size: 3.5em; /* Boyut artırıldı */
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none; /* Tıklanamaz */
+    white-space: nowrap; /* Tek satırda kalmasını sağlar */
+    animation: moveText 20s linear infinite;
+}
+
+.content {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px; /* Padding artırıldı */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+    overflow: hidden; /* İçerikteki yıldızların kutu dışında görünmesini engeller */
+    width: 80%;
+    max-width: 700px; /* Maksimum genişlik artırıldı */
+    height: auto;
+}
+
+.content .starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('stars.png') repeat;
+    background-size: 20px 20px; /* Küçük yıldızlar */
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.message {
+    font-size: 1.5em; /* Büyütülmüş font boyutu */
+    margin-bottom: 20px;
+    z-index: 2;
+    color: #800000; /* Romantik kırmızı renk */
+    position: relative;
+}
+
+.content img.cat {
+    width: 250px; /* Kedinin boyutunu artırdık */
+    margin-bottom: 20px;
+    border: 5px solid #fff; /* Kedinin etrafında beyaz bir sınır ekleyelim */
+    border-radius: 10px; /* Köşeleri yuvarlayalım */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Belirgin bir gölge ekleyelim */
+    transition: transform 1s; /* Kedinin animasyonu */
+    position: relative; /* Butonlarla hizalama için */
+    z-index: 2;
+}
+
+button {
+    padding: 12px 24px; /* Buton içi padding artırıldı */
+    margin: 10px;
+    font-size: 18px; /* Buton yazı boyutu artırıldı */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+#yesButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#noButton {
+    background-color: #f44336;
+    color: white;
+    position: relative; /* Kaybolmamasını sağlar */
+    z-index: 2;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    font-size: 4em; /* Boyut artırıldı */
+    color: #ff1493; /* Belirgin pembe renk */
+    pointer-events: none; /* Tıklanamaz */
+    white-space: nowrap; /* Tek satırda kalmasını sağlar */
+    animation: moveFooterText 20s linear infinite;
+}
+
+@keyframes moveFooterText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.love-heart {
+    content: "❤️";
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Yıldız efekti */
+.starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('stars.png') repeat;
+    background-size: 20px 20px; /* Küçük yıldızlar */
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Duman efekti */
+#smokeEffect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: url('duman.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Tıklanamaz */
+}
+
+/* Mektup */
+#letter {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px; /* Padding artırıldı */
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    font-size: 1.2em; /* Büyütülmüş font boyutu */
+    width: 90%; /* Ekrana sığması için genişlik */
+    max-width: 800px; /* Maksimum genişlik */
+    word-wrap: break-word; /* Uzun kelimelerin satır sonuna geçmesini sağlar */
+    animation: showLetter 2s forwards;
+}
+
+/* Mektubu gösterirken diğer içerikleri gizleme */
+.hidden {
+    display: none;
+}
+
+@keyframes showLetter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

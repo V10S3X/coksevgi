@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantik Sayfa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <span>Seni Çok Seviyorum <span class="love-heart">❤️</span></span>
+    </div>
+
+    <div class="content">
+        <div class="starfield"></div> <!-- Yıldız efekti buraya eklendi -->
+        <div class="message">
+            <p>Kabul eder misin lütfen?</p>
+        </div>
+        <img id="catImage" class="cat" src="kedi.png" alt="Kedi">
+        <button id="yesButton">Evet</button>
+        <button id="noButton">Hayır</button>
+    </div>
+
+    <div class="footer">
+        <span>İyi Ki Varsın Minnos <span class="love-heart">❤️</span></span>
+    </div>
+
+    <div id="smokeEffect"></div>
+    <div id="letter">
+        <p>Minnos,<br><br>
+        Güzelliğin kışın ilk kar tanelerinin yeryüzüne süzülüşü kadar zarif ve ilkbaharda açan çiçeklerin renk cümbüşü kadar canlı, gün batımında gökyüzünü boyayan kızıllık kadar romantik ve gece vakti deniz kıyısında parlayan ay ışığı kadar büyüleyici, bir meltemin hafifçe estiğinde yüzümüze getirdiği ferahlık kadar tazeleyici ve ormanın derinliklerinde duyulan kuş cıvıltıları kadar huzur verici, güzelliğin bir sanat eserinin incelikle işlenmiş detayları kadar etkileyici ve sevdiğimiz birinin gözlerindeki parıltı kadar sıcak. Seninle birlikte olmak hayatımı her gün biraz daha aydınlatıyor. Sen çok tatlısın, çok iyi kalplisin ve seni tanıdığım için kendimi çok şanslı hissediyorum. Seninle her şey daha güzel ve anlamlı. İyi ki varsın, iyi ki tanımışım seni. Seninle geçirdiğim her an özel ve değerli; birlikte yaşadığımız anılar kalbimde her zaman ayrı bir yer tutacak. Seninle paylaştığım her şey beni daha iyi ve mutlu biri yapıyor. Seninle konuşmak, seni tanımak ve seninle vakit geçirmek hayatımın en güzel anlarını oluşturuyor. Her günümü seninle geçirme hayali beni mutlu ediyor ve seni her düşündüğümde içimi tarifsiz bir huzur kaplıyor. Seninle paylaştığım her anı sonsuza dek hatırlamak ve yaşadığımız her güzel anı kalbimde saklamak istiyorum. Seninle olan bağımız her geçen gün daha da güçleniyor ve seninle her konuşmamızda seni daha iyi tanımanın mutluluğunu yaşıyorum. Seninle olmak bana huzur ve mutluluk veriyor ve seninle olduğum her an kendimi daha iyi hissediyorum. Birlikte geçirdiğimiz zaman benim için çok değerli ve seninle her anı paylaştığım için kendimi çok şanslı hissediyorum. Her günümü seninle geçirmek ve birlikte daha fazla anı biriktirmek için sabırsızlanıyorum. Seni tanıdığım için minnettarlık duyuyorum ve seninle her geçen gün daha da yakınlaşıyor olmak beni çok mutlu ediyor. Her anımda yanımda olmanı diliyorum çünkü seninle her şey daha güzel ve anlamlı. İyi geceler, tatlı rüyalar dilerim. Her gece yıldızların altında huzurla uyumanı ve rüyalarında en güzel anıları yeniden yaşamanı isterim. Sabah olduğunda güneşin ilk ışıklarıyla uyanıp yeni bir güne mutlu ve huzurlu başlamanı diliyorum. Seni düşünmek bile kalbimi ısıtıyor ve sana olan sevgim her geçen gün daha da büyüyor. İyi ki varsin küçük dünyamın tatlı prensesi.</p>
+    </div>
+
+    <script>
+        document.getElementById('noButton').addEventListener('mouseover', function() {
+            this.style.position = 'absolute';
+            this.style.left = Math.random() * (window.innerWidth - this.clientWidth) + 'px';
+            this.style.top = Math.random() * (window.innerHeight - this.clientHeight) + 'px';
+        });
+
+        document.getElementById('yesButton').addEventListener('click', function() {
+            document.getElementById('catImage').style.transform = 'scale(0)';
+            document.getElementById('smokeEffect').style.opacity = '1';
+            setTimeout(function() {
+                document.getElementById('smokeEffect').style.opacity = '0';
+                document.getElementById('letter').style.display = 'block';
+                document.getElementById('letter').classList.add('show');
+                document.querySelector('.content').classList.add('hidden');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
